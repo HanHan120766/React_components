@@ -21,17 +21,6 @@ For the project to build, **these files must exist with exact filenames**:
 * `public/index.html` is the page template;
 * `src/index.js` is the JavaScript entry point.
 
-You can delete or rename the other files.
-
-You may create subdirectories inside `src`. For faster rebuilds, only files inside `src` are processed by Webpack.<br>
-You need to **put any JS and CSS files inside `src`**, otherwise Webpack won’t see them.
-
-Only files inside `public` can be used from `public/index.html`.<br>
-Read instructions below for using assets from JavaScript and HTML.
-
-You can, however, create more top-level directories.<br>
-They will not be included in the production build so you can use them for things like documentation.
-
 ## Available Scripts
 
 In the project directory, you can run:
@@ -91,33 +80,6 @@ script.
 npm run build
 npm run analyze
 ```
-
-## Deployment
-
-`npm run build` creates a `build` directory with a production build of your app. Set up your favorite HTTP server so that a visitor to your site is served `index.html`, and requests to static paths like `/static/js/main.<hash>.js` are served with the contents of the `/static/js/main.<hash>.js` file.
-
-### Static Server
-
-For environments using [Node](https://nodejs.org/), the easiest way to handle this would be to install [serve](https://github.com/zeit/serve) and let it handle the rest:
-
-```sh
-npm install -g serve
-serve -s build
-```
-
-The last command shown above will serve your static site on the port **5000**. Like many of [serve](https://github.com/zeit/serve)’s internal settings, the port can be adjusted using the `-p` or `--port` flags.
-
-Run this command to get a full list of the options available:
-
-```sh
-serve -h
-```
-
-### Other Solutions
-
-You don’t necessarily need a static server in order to run a Create React App project in production. It works just as fine integrated into an existing dynamic one.
-
-Here’s a programmatic example using [Node](https://nodejs.org/) and [Express](http://expressjs.com/):
 
 ```javascript
 const express = require('express');
